@@ -1,5 +1,5 @@
 {% set name = "legend-pygeom-tools" %}
-{% set version = "0.0.22" %}
+{% set version = "0.0.23" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/legend_pygeom_tools-{{ version }}.tar.gz
-  sha256: 3eb851319c09e976af2d17c7253e748ba27aa29a90ff9c168d560f4f87b7ee5a
+  sha256: b75d08feaa6c6e68971ec523af45e4df8691726aca8a43147b2345b823a00b5b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   entry_points:
     - legend-pygeom-vis = pygeomtools.viewer:vis_gdml_cli
 

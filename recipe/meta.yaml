@@ -1,5 +1,5 @@
 {% set name = "legend-pygeom-tools" %}
-{% set version = "0.0.24" %}
+{% set version = "0.0.25" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/legend_pygeom_tools-{{ version }}.tar.gz
-  sha256: 9a12b78267fb0c14c9e210dc6e83cde1b6ea7e6f30726472ffcbec945b476108
+  sha256: 3e28c5c236c000035f92681983af8753675f61b92c46e5557b98db6d597964dd
 
 build:
   noarch: python
@@ -20,11 +20,11 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools >=61.2
+    - setuptools >=77
     - setuptools-scm >=7
     - pip
   run:
-    - legend-pygeom-optics >=0.13
+    - legend-pygeom-optics >=0.15
     - python >={{ python_min }}
     - numpy
     - pint

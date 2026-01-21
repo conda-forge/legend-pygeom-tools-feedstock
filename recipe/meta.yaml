@@ -1,5 +1,5 @@
 {% set name = "legend-pygeom-tools" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/legend_pygeom_tools-{{ version }}.tar.gz
-  sha256: f5047f4849d008ba1df28a598ab7b686a7f814c112db5e049eeeb6d237f75768
+  sha256: 2c352a67b5ac2faf15fb2aa65a50f8f7ac409b6c282e6944d4124ad13769e14e
 
 build:
   noarch: python
@@ -31,6 +31,7 @@ requirements:
     - pyg4ometry
     - dbetto
     - legend-pydataobj >=0.15.0
+    - jsonschema
 
 test:
   imports:

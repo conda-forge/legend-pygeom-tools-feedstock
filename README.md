@@ -11,7 +11,7 @@ Summary: Python tools to handle Monte Carlo simulation geometry
 
 Development: https://github.com/legend-exp/legend-pygeom-tools
 
-Documentation: https://legend-pygeom-tools.readthedocs.io
+Documentation: https://legend-pygeom-tools.readthedocs.io/
 
 Current build status
 ====================

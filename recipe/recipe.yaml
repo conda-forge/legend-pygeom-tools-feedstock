@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  name: legend-pygeom-tools
+  version: "0.4.0"
+  python_min: "3.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/legend_pygeom_tools-${{ version }}.tar.gz
+  sha256: 8db3ffb51b08f1eea104a0389d4e0fec4d5a89f025a9fc7732a490a8fef28249
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - legend-pygeom-vis = pygeomtools.viewer:vis_gdml_cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=77
+    - setuptools-scm >=7
+    - pip
+  run:
+    - legend-lh5io >=0.2
+    - legend-pygeom-optics >=0.15.1
+    - python >=${{ python_min }}
+    - numpy
+    - pint
+    - pyg4ometry
+    - dbetto
+    - legend-pydataobj >=2.0.1
+    - jsonschema
+
+tests:
+  - python:
+      imports:
+        - pygeomtools
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Python tools to handle Monte Carlo simulation geometry
+  license: GPL-3.0-only
+  license_file: LICENSE
+  homepage: https://github.com/legend-exp/legend-pygeom-tools
+  repository: https://github.com/legend-exp/legend-pygeom-tools
+  documentation: https://legend-pygeom-tools.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - gipert
+    - ManuelHu

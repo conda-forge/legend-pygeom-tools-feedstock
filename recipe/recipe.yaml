@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: legend-pygeom-tools
   version: 0.5.0
-  python_min: '3.10'
+  python_min: '3.11'
 
 package:
   name: ${{ name|lower }}

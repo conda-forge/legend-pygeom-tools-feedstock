@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: legend-pygeom-tools
-  version: "0.4.0"
-  python_min: "3.10"
+  version: 0.5.0
+  python_min: '3.11'
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/legend_pygeom_tools-${{ version }}.tar.gz
-  sha256: 8db3ffb51b08f1eea104a0389d4e0fec4d5a89f025a9fc7732a490a8fef28249
+  sha256: f1ab9728cc475b2467f35a91ac870198032a918162e699a024018035271c66a4
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   python:
@@ -29,7 +29,7 @@ requirements:
     - pip
   run:
     - legend-lh5io >=0.2
-    - legend-pygeom-optics >=0.15.1
+    - legend-pygeom-optics >=0.17
     - python >=${{ python_min }}
     - numpy
     - pint
@@ -37,7 +37,6 @@ requirements:
     - dbetto
     - legend-pydataobj >=2.0.1
     - jsonschema
-
 tests:
   - python:
       imports:

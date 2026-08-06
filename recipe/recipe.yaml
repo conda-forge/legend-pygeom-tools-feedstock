@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: legend-pygeom-tools
-  version: "0.6.0"
+  version: "0.7.0"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/legend_pygeom_tools-${{ version }}.tar.gz
-  sha256: 43ba853982baf6cad71da0884e3bb89c4456ec4dd387e85eef8fb3bea8961f62
+  sha256: 431d44750ba614c8253d9872f40de407f112487dfba3cc80d1da4443db42527a
 
 build:
   number: 0
@@ -42,7 +42,9 @@ tests:
       imports:
         - pygeomtools
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Python tools to handle Monte Carlo simulation geometry

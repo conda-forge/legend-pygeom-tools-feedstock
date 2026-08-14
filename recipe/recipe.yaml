@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: legend-pygeom-tools
-  version: "0.7.0"
+  version: "0.7.1"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/legend_pygeom_tools-${{ version }}.tar.gz
-  sha256: 431d44750ba614c8253d9872f40de407f112487dfba3cc80d1da4443db42527a
+  sha256: 96873d93eb069298d5958c5d5a834f7dd99378554fc2547a59c36055ce684741
 
 build:
   number: 0
